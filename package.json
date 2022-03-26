@@ -35,7 +35,9 @@
     "test": "jest --config jestconfig.json",
     "test:coverage": "npm run test -- --coverage | coveralls",
     "release": "standard-version",
-    "prepublishOnly": "npm run test && npm run build"
+    "prepublishOnly": "npm run test && npm run build",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -48,5 +50,8 @@
     "standard-version": "^8.0.1",
     "yamljs": "^0.3.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
